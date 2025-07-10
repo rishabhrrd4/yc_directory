@@ -1,11 +1,25 @@
+import SearchForm from "@/components/SearchForm";
 import Image from "next/image";
 
-export default function Home() {
+
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ query?: string }>;
+}) {
+  const query = (await searchParams).query;
+
   return (
     <>
       <section className="pink_container">
-        <h1 className="heading">Pitch Your Startup, <br /> Connct With Entrepreneurs</h1>
-        <p className="sub-heading !max-w-3xl">Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competetions.</p>
+        <h1 className="heading">
+          Pitch Your Startup, <br /> Connct With Entrepreneurs
+        </h1>
+        <p className="sub-heading !max-w-3xl">
+          Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
+          Competetions.
+        </p>
+        <SearchForm query={query}/>
       </section>
     </>
   );
