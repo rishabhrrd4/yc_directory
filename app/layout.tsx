@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import "easymde/dist/easymde.min.css";
 
 const workSans = localFont({
   src: [
@@ -57,7 +58,7 @@ const workSans = localFont({
     },
   ],
   variable: "--font-work-sans",
-})
+});
 
 export const metadata: Metadata = {
   title: "YC Directory",
@@ -71,9 +72,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${workSans.variable} font-work-sans`}>
-        {children}
-      </body>
+      <body className={`${workSans.variable} font-work-sans`}>{children}</body>
     </html>
   );
 }
