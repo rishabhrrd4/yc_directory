@@ -9,7 +9,7 @@ const Navbar = async () => {
       <nav className="flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
           <Image
-            src="/Group 5.png"
+            src="/logo.png"
             alt="Logo"
             width={144}
             height={30}
